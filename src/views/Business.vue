@@ -1,11 +1,32 @@
 <template>
-    <div></div>
+    <div>
+        {{getData.a}}
+        <br>
+        {{getData.b}}
+        <button @click="change">change</button>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'Business'
-}
+  import { mapGetters, mapActions } from 'vuex'
+  export default {
+    name: 'Business',
+    data() {
+      return {}
+    },
+    computed: {
+      ...mapGetters(['getData'])
+    },
+    methods: {
+      ...mapActions(['changeData']),
+      change: function () {
+        this.changeData({
+          name: 'a',
+          value: 'test'
+        })
+      }
+    }
+  }
 </script>
 
 <style scoped lang='less'>

@@ -1,10 +1,19 @@
 <template>
-    <div>customer</div>
+    <div>
+        test: {{gettersMsg}}
+    </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
-  name: 'Customer'
+  name: 'Customer',
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapGetters(['gettersMsg'])
+  }
 }
 </script>
 
